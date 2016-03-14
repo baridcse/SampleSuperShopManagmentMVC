@@ -1,0 +1,76 @@
+﻿
+@model IEnumerable<shopManagment.Models.Item>
+
+@{
+    ViewBag.Title = "Items";
+    
+}
+
+<h2>Items</h2>
+
+<div class="row col-md-4 col-md-offset-4" >
+    <form action="@Url.Action("GetItemView2", "Home") " method="post">
+        <table>
+
+            <tr>
+                <td>Item Name</td>
+                <td><input type="text" class="form-control" name="itemName"></td>
+            </tr>
+            <tr>
+                <td>Itam Quantity</td>
+                <td><input type="text" class="form-control" name="itemQuantity"></td>
+            </tr>
+            <tr>
+                <td>Unit Price</td>
+                <td><input type="text" class="form-control" name="unitPrice"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Done</button></td>
+            </tr>
+
+        </table>
+    </form>
+
+
+</div>
+
+<div class="row col-md-8 col-md-offset-2" style="padding-top:30px;">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+        </table>
+
+    
+</div>
+
+

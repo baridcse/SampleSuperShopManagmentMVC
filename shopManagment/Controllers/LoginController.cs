@@ -22,7 +22,7 @@ namespace shopManagment.Controllers
 
             if (name == "barid" && password == "123")
             {
-                return RedirectToAction("sell", "Home");
+                return RedirectToAction("GetItemView", "Home");
             }
             else
             {

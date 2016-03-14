@@ -20,21 +20,20 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("SELL", "Index", "Home")</li>
-                    <li>@Html.ActionLink("BUY", "About", "Home")</li>
-                    <li>@Html.ActionLink("Report", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Items", "GetItemView", "Home")</li>
+                    <li>@Html.ActionLink("Sell", "GetSellView", "Home")</li>
+                    <li>@Html.ActionLink("Reports", "GetReportView", "Home")</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        @RenderBody()  
     </div>
-
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
